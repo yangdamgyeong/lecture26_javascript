@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let start = parseInt(prompt("시작단 :"));
+        let end = parseInt(prompt("종료단 : "));
+
+        while (end < start) {
+            alert ("다시");
+            start = parseInt(prompt("시작단 :"));
+            end = parseInt(prompt("종료단 : "));
+        }
+
+        switch (true) {
+            case (start <= end):
+            for (let i = start; i <= end; i ++) {
+                document.write("<h3>***" + i + "단 ***</h3>");
+                for (let j = 1; j <= 9; j ++) {
+                    document.write( i + " * " + " = " + ( i * j ) + "<br>");
+                }
+                document.write("<br>")
+            }
+            break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

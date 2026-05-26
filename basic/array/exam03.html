@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [10, 20, 30, 40, 50]
+
+        document.write(`before : ${arr}<br>`)
+        //arr의 모든 원소에 100을 더하기  arr= [110, 120, 130, 140, 150]
+        /*for(let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i] + 100
+        }
+        */
+
+    
+        arr = arr.map(function(element){
+            return element + 100
+        })
+        document.write(`after : ${arr}<br>`)
+
+        let arr2 = arr.filter(function(element){
+            return element % 3 == 0
+        }) 
+
+        /*
+        arr2 = []
+        for(let i = 0; i < arr.length; i++) {
+        if(arr[i] % 3 == 0)
+        arr2.push(arr[i])
+        }
+        */
+        document.write(`arr2 : ${arr2}<br>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

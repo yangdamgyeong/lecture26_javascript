@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 10
+        let b = a
+
+        b = b + 200
+
+        document.write(`a : ${a}<br>`)
+        document.write(`b : ${b}<br>`)
+
+        let arr = [10, 20, 30, 40, 50]
+//      let copy_arr = arr   // shallow copy(얕은 복사)
+        // deep copy(깊은 복사)
+        /*
+        //방법 1
+        let copy_arr = []
+        for(let data of arr) {
+            copy_arr.push(data)
+        }
+        
+        //방법 2
+        let copy_arr = arr.map(function(elemnet){
+            return element
+        })
+        copy_arr[2] = 1000
+        */
+        //방법 2-1
+        let copy_arr = arr.map((element) => element)
+        /*
+        //방법 3
+        let copy_arr = [...arr]   //...arr : 전개연산자
+        */
+ 
+        document.write(`arr : ${arr}<br>`)
+        document.write(`copy_arr : ${copy_arr}<br>`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

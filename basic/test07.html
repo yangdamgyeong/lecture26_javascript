@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let numbers = [];
+        for (let i = 1; i <= 100; i++) {
+            numbers.push(i);
+        }
+        function gameStart() {
+           
+            const time = new Date();
+            
+            let secret_num = (time.getMilliseconds() % 100) + 1;
+
+            let num_try = 0;
+            let try_limit = 7;
+            let current_min = 1;
+            let current_max = 100;
+            let array_num = [];
+
+            document.write(`현재 범위 : ${current_min} ~ ${current_max}<br>`);
+   
+        while (num_try < try_limit) {
+            let target = parseInt(prompt('숫자를 입력하세요 : '));
+            if (target < current_min || target > current_max) {
+                alert('범위 안의 숫자를 입력하세요!');
+                continue;
+            }
+
+            num_try ++;
+            array_num.push(target)
+            let chance = try_limit - num_try;
+
+            document.write(`숫자를 입력하세요 : ${target} <br> `);
+
+            if (target == secret_num) {
+                document.write(`정답입니다!<br>`);
+                document.write(`입력 기록 : [${array_num.join(', ')}]<br>`)
+                document.write(`총 시도 회수 : ${num_try}회 <br>`);
+                break;
+            }
+            else if (target < secret_num) {
+                docuemnt.write('UP!'+ '<br>');
+                docuemnt.write(`남은 기회 : ${chance} <br>`);
+                alert('UP!');
+                if (target >= current_min) {
+                    current_min = target + 1;
+                }
+            }
+            else{
+                document.write(`DOWN!<br>`);
+                document.write(`남은 기회 : ${chance} <br>`);
+                alert('DOWN!');
+                if (target <= current_max) {
+                    current_max = target -1;
+                }
+            }
+            if (num_try < try_limit) {
+                document.write(`현재 범위 : ${current_min} ~ ${current_max}<br>`);
+            }
+        }
+        if (num_try === try_limit && array_num[array_num.length - 1] !== secret_num) {
+                document.write('게임오버');
+        }
+
+    }
+
+    gameStart();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = parseInt(prompt("숫자를 입력하세요."));
+        let result = "";
+        for (let n = 1; n <= num; n++) {
+
+        function first_rule(number) {
+            let result = "";
+            let numstr = String(number);
+            for (let i = 0; i < numstr.length; i ++) {
+                if (numstr[i] === '3' || numstr[i] === '6' || numstr[i] === '9')
+                result += '짝'
+            }
+            return result;
+        }
+        
+        function second_rule(number) {
+            if(number !== 0 && number % 10 === 0){
+                let bbo_count = number / 10;
+                let bbo_result = "";
+                for (let j = 0; j < bbo_count; j++) {
+                        bbo_result += '뽀';
+                
+                }
+                return bbo_result + '숑';
+            }
+            return "";
+        }
+
+        function third_rule(number) {
+            let rule1 = first_rule(number);
+            let rule2 = second_rule(number);
+            if (rule1 !== "" && rule2 !== "") {
+                return rule2.replace('숑', '') + rule1 + '숑';
+            }
+            return "";
+        }
+        if (third_rule(n) !== "") {
+                document.write(third_rule(n) + "<br>");
+        } else if (first_rule(n) !== "") {
+                document.write(first_rule(n) + "<br>");
+        } else if (second_rule(n) !== "") {
+                document.write(second_rule(n) + "<br>");
+        } else {
+                document.write(n + "<br>");
+        }
+
+    }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

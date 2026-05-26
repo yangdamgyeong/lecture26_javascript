@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function aaa() {
+            alert('aaa() 호출...')
+        }
+
+        let bbb = function () {
+            alert('ccc() 호출...')           
+        }
+
+        //정수 2개의 합을 출력하는 함수 작성
+        let printSum = function(a, b){
+            document.write(`${a} + ${b} = ${a + b}<br>`)
+
+        }
+        function callback(fn){
+            fn(10, 20)
+
+        }
+
+        aaa()
+        bbb()
+        callback(printSum)
+    </script>
+               
+</head>
+<body>
+    
+</body>
+</html>

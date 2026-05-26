@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function aaa() {
+            document.write('aaa() 호출 ... <br>')
+        }
+        function aaa(a, b){
+            document.write('aaa(a,b) 호출...<br>')
+        }
+        function aaa(a) {
+            document.write('aaa(a) 호출...<br>')
+        }
+
+        aaa(10, 20)
+        aaa()
+        aaa('1A')
+        aaa(1, 2, 3, function() {})
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
